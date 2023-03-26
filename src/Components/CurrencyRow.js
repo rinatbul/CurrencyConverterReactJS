@@ -1,6 +1,5 @@
 import React from "react";
 
-
 export const CurrencyRow = (props) => {
     const {
         selectCurrency,

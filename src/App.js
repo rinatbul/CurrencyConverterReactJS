@@ -1,5 +1,5 @@
 import './App.css';
-import {CurrencyRow} from "./CurrencyRow";
+import {CurrencyRow} from "./Components/CurrencyRow";
 import React, {useEffect, useState} from "react";
 
 let myHeaders = new Headers();
@@ -62,7 +62,7 @@ function App() {
 
     return (
         <div className="App">
-            <h1>Convert</h1>
+            <header className='header'>Converter</header>
             <CurrencyRow currencyOptions={currencyOptions}
                          selectCurrency={fromCurrency}
                          onChangeCurrency={e => setFromCurrency(e.target.value)}
