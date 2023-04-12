@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     display: flex;
     justify-content: center;
@@ -6,40 +6,48 @@ body{
     text-align: center;
     min-height: 100vh;
     background-color: grey;
-    /*color: white;*/
     font-family: Arial;
 }
 
-h1{
-    margin: 0;
+h1 {
     margin-bottom: .5rem;
 }
 
-.input{
+.input {
     border: 1px solid #333;
     border-radius: .3em;
     padding: .25rem;
     width: 7em;
+    margin-left: 1rem;
+    font-size: 2rem;
 }
-select{
-    margin-left: .5rem;
+
+select {
+    border-radius: .3em;
+    margin: 0 1rem 0 1rem;
+    font-size: 2rem;
 }
-.equals{
+
+.equals {
     font-weight: bold;
     font-size: 2rem;
 }
-.App{
+
+.App {
     background-color: white;
-    border-radius: 10px;
-    padding:10px 20px 20px 20px;
+    border-radius: 1rem;
+    padding-bottom: 2rem;
 }
-.header{
-    height: 30px;
+
+.header {
+    height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    border-radius: 1rem 1rem 0 0;
+    margin-bottom: 2rem;
+    padding: 1rem;
     color: white;
     background-color: #c2530a;
+    font-size: 2rem;
 }
