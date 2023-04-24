@@ -19,6 +19,7 @@ function App() {
     const [exchangeRate, setExchangeRate] = useState()
     const [amount, setAmount] = useState(1)
     const [amountInFromCurrency, setAmountInFromCurrency] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     let toAmount, fromAmount
     if (amountInFromCurrency) {
@@ -30,6 +31,7 @@ function App() {
     }
 
     useEffect(() => {
+        setLoading(true)
         fetch(URL, requestOptions)
             .then(response => response.json())
             .then(data => {
@@ -38,6 +40,7 @@ function App() {
                 setFromCurrency(data.base)
                 setToCurrency(firstCurrency)
                 setExchangeRate(data.rates[firstCurrency])
+                setLoading(false)
             })
             .catch(error => console.log('error', error));
     }, [])
@@ -67,13 +70,15 @@ function App() {
                          selectCurrency={fromCurrency}
                          onChangeCurrency={e => setFromCurrency(e.target.value)}
                          onChangeAmount={handleFromAmountChange}
-                         amount={fromAmount}/>
+                         amount={fromAmount}
+                         isLoading={loading}/>
             <div className='equals'>=</div>
             <CurrencyRow currencyOptions={currencyOptions}
                          selectCurrency={toCurrency}
                          onChangeCurrency={e => setToCurrency(e.target.value)}
                          onChangeAmount={handleToAmountChange}
-                         amount={toAmount}/>
+                         amount={toAmount}
+                         isLoading={loading}/>
         </div>
     );
 }
